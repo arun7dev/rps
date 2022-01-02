@@ -194,6 +194,7 @@ class _MyHomePageState extends State<MyHomePage> {
         click2 = true;
         (click1 == true && click2 == true) ?
         Future.delayed(Duration(milliseconds: 500), () {
+
           Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(builder: (context) => Result(p1, p2)),
