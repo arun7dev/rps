@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   flex: 1,
                   child: Container(
                     //color: Color(0xff101820FF),
-                    color: Colors.white,
+                    color: Colors.red[400],
 
 
                     child: Column(
@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: FloatingActionButton.extended(
-                                  backgroundColor: Colors.red,
+                                  backgroundColor: Colors.red[900],
                                   heroTag: 'p1',
                                   label: RotatedBox(
                                       quarterTurns: 2,
@@ -79,14 +79,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                           : "Clicked")),
                                   onPressed: changeNameP1),
                             )),
-                        const Expanded(
+                         Expanded(
                             flex: 2,
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: RotatedBox(
                                 quarterTurns: 2,
                                 child: Text("Player 1",
-                                  style: TextStyle(color: Colors.red,
+                                  style: TextStyle(color: Colors.red[900],
                                       fontSize: 30,
                                       height: 2,
                                       letterSpacing: 5,
@@ -100,9 +100,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: RotatedBox(
                               quarterTurns: 2,
                               child: Padding(
-                            padding: const EdgeInsets.all(8),
+                                  padding: const EdgeInsets.symmetric(horizontal: 8 ,vertical: 8),
             child:Align(
-            alignment: Alignment.bottomCenter,
+            alignment: Alignment.center,
                             child: Image.asset(click1==false?"assets/arrow.png":ImageOut(p1)),)
                           )
                           ),),
@@ -115,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   flex: 1,
                   child: Container(
                     //color: Color(0xffFEE715FF),
-                    color: Colors.black,
+                    color: Colors.yellow[400],
 
 
                     child: Column(
@@ -123,13 +123,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: [
                         Expanded(
                           flex: 4,
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Align(
-                                alignment: Alignment.bottomCenter,
-                                child: Image.asset(click2==false?"assets/arrow.png":ImageOut(p2))),
+                          child: RotatedBox(
+                            quarterTurns: 0,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 8 ,vertical: 8),
+                              child: Align(
+                                  alignment: Alignment.center,
+                                  child: Image.asset(click2==false?"assets/arrow.png":ImageOut(p2))),
+                            ),
                           ),),
-                        const Expanded(
+                         Expanded(
                             flex: 2,
                             child: Align(
                               alignment: Alignment.bottomCenter,
@@ -137,7 +140,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               Text("Player 2",
 
                                 style: TextStyle(
-                                    color: Colors.red,
+                                    color: Colors.yellow[900],
                                     fontSize: 30,
                                     height: 2,
                                     letterSpacing: 5,
@@ -151,7 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: FloatingActionButton.extended(
-                                  backgroundColor: Colors.red,
+                                  backgroundColor:  Colors.yellow[900],
                                   heroTag: 'p2',
                                   label: Text(
                                       click2 == false ? "CLICK" : "Clicked"),

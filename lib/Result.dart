@@ -11,6 +11,7 @@ class Result extends StatefulWidget {
 }
 
 class _ResultState extends State<Result> {
+  var result="";
   @override
 
     Future<bool> _onWillPop() async {
@@ -19,15 +20,27 @@ class _ResultState extends State<Result> {
 
     @override
     Widget build(BuildContext context) {
-      return new WillPopScope(
+      return WillPopScope(
         onWillPop: _onWillPop,
-        child: new Scaffold(
+        child: Scaffold(
+          backgroundColor: Colors.black,
           body: Column(
             children: [
               Expanded(
                 flex: 5,
                 child: Container(
-                  child: Center(child: Text(Res(widget.p1, widget.p2),style: TextStyle(fontSize: 50,fontWeight: FontWeight.bold),)),
+                  child: Center(child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+
+                    children: [
+                      Text(
+                        Res(widget.p1, widget.p2),style: TextStyle(fontSize: MediaQuery.of(context).size.width/7,fontWeight: FontWeight.bold,color: Colors.white),
+                      textAlign: TextAlign.center,
+                      ),
+                      Text(result,style: TextStyle(fontSize: MediaQuery.of(context).size.width/5,fontWeight: FontWeight.bold,color: Colors.red),
+                        textAlign: TextAlign.center,),
+                    ],
+                  )),
                 ),
               ),
               Expanded(
@@ -48,46 +61,57 @@ class _ResultState extends State<Result> {
 
 
 
-}
+
 
 
 Res(p1,p2){
 
 
   if(p1 == "R" && p2 == "R"){
-    return ("Rock meets Rock its a tie!");
+
+      result="TIE!";
+
+    return ("Rock meets Rock");
    
   }
   else if(p1 =="R" && p2== "P"){
-    return ("Rock is covered by Paper Player 2 wins!");
+    result="Player 2 wins!";
+    return ("Rock is covered by Paper");
     
   }
   else if(p1 == "R" && p2 == "S"){
-    return ( "Rock crushes Scissors Player 1 wins!");
+    result="Player 1 wins!";
+    return ( "Rock crushes Scissors");
     
   }
   else if(p1 == "P" && p2 == "R"){
-    return ( "Paper covers Rock Player 1 wins!");
+    result="Player 1 wins!";
+    return ( "Paper covers Rock");
     
   }
   else if(p1 == "P" && p2 == "P"){
-    return ("Paper meets Paper its a tie!");
+    result="TIE!";
+    return ("Paper meets Paper");
     
   }
   else if(p1 == "P" && p2 == "S"){
-    return ("Paper is cut by Scissors  Player 2 wins!");
+    result="Player 2 wins!";
+    return ("Paper is cut by Scissors");
    
   }
   else if( p1 == "S" && p2 == "R"){
-    return ("Scissors are crushed by Rock Player 2 wins!");
+    result="Player 2 wins!";
+    return ("Scissors are crushed by Rock");
 
   }
   else if( p1 == "S" && p2 == "P"){
-  return (  "Scissors cuts Paper Player 1 wins!");
+    result="Player 1 wins!";
+  return (  "Scissors cuts Paper");
    
   }
   else if(p1 == "S" && p2 == "S"){
-  return ("Scissors meet Scissors its a tie!");
+    result="TIE!";
+  return ("Scissors meet Scissors");
     
   }
  
@@ -102,4 +126,5 @@ Back(context) {
     );
 
 
+}
 }
