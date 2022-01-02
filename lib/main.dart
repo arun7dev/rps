@@ -179,11 +179,12 @@ class _MyHomePageState extends State<MyHomePage> {
         click1 = true;
 
         (click1 == true && click2 == true) ?
+        Future.delayed(Duration(milliseconds: 500), () {
         Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(builder: (context) => Result(p1, p2)),
               (Route<dynamic> route) => false,
-        ) : null;
+        ); }): null;
       });
       return true;
     }
@@ -192,11 +193,12 @@ class _MyHomePageState extends State<MyHomePage> {
         click2 == false ? p2 = RPS() : null;
         click2 = true;
         (click1 == true && click2 == true) ?
-        Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(builder: (context) => Result(p1, p2)),
-              (Route<dynamic> route) => false,
-        ) : null;
+        Future.delayed(Duration(milliseconds: 500), () {
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => Result(p1, p2)),
+                (Route<dynamic> route) => false,
+          ); }): null;
       });
       return true;
     }
